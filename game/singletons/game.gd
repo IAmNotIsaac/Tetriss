@@ -1,6 +1,8 @@
 extends Node
 
 
+signal tick
+
 enum Tetrominos { I, J, L, O, S, Z, T }
 
 const tetromino_data = {
@@ -36,3 +38,7 @@ const tetromino_data = {
 const ROTATION_SNAP := 90
 const BLOCK_SIZE := Vector2(20, 20)
 const MAP_EXTENTS := Vector2(5 * BLOCK_SIZE.x, 10 * BLOCK_SIZE.y)
+
+
+func _on_TickTimer_timeout() -> void:
+	emit_signal("tick")
