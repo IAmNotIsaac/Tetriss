@@ -39,6 +39,9 @@ const ROTATION_SNAP := 90
 const BLOCK_SIZE := Vector2(20, 20)
 const MAP_EXTENTS := Vector2(5 * BLOCK_SIZE.x, 10 * BLOCK_SIZE.y)
 
+var ticks := 0
+
 
 func _on_TickTimer_timeout() -> void:
+	ticks += 1
 	emit_signal("tick")
